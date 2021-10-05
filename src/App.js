@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,16 +15,6 @@ import "./App.css";
 function App() {
   return (
     <>
-      {/* <Router>
-        <Switch>
-          <Route exact path="/"> component={Main} />
-
-          <Route exact path="questions" component={Questions}>
-            <Questions />
-          </Route>
-        </Switch>
-      </Router> */}
-
       <BrowserRouter>
         <Header />
         <Switch>
