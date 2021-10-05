@@ -36,7 +36,7 @@ function Questions() {
           <select multiple className="form__control" id="priority">
             <option>Never</option>
             <option>Lets Other Decide</option>
-            <option>Contributes but Yields to the Consensus</option>
+            <option>Aligns to the Consensus</option>
             <option>Mostly</option>
             <option>Always</option>
           </select>
