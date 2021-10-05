@@ -1,0 +1,22 @@
+.form {
+  margin-bottom: 5rem;
+  &__group {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem;
+    &-comment {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 6rem 2rem 6rem;
+    }
+  }
+  &__label {
+    width: 25rem;
+  }
+  &__control {
+    width: 10rem;
+  }
+  &__btn {
+    margin-left: 6rem;
+  }
+}
