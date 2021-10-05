@@ -99,7 +99,11 @@ function Questions() {
           </select>
         </div>
         <div className="form-group">
-          <label htmlFor="exampleFormControlTextarea1">Example textarea</label>
+          <label htmlFor="exampleFormControlTextarea1">
+            Please provide comments below to include what the product owner does
+            well, what they should stop doing and what recommendations you they
+            can improve on.
+          </label>
           <textarea
             className="form-control"
             id="exampleFormControlTextarea1"
