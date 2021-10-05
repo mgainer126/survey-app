@@ -24,8 +24,8 @@ function Questions() {
             <option>Never</option>
             <option>Rarely</option>
             <option>Satisfactory</option>
-            <option>Enough</option>
-            <option>Always</option>
+            <option>Good</option>
+            <option>Excellent</option>
           </select>
         </div>
         <div className="form__group">
@@ -35,10 +35,10 @@ function Questions() {
           </label>
           <select multiple className="form__control" id="priority">
             <option>Never</option>
-            <option>Lets Other Decide</option>
+            <option>Lets Others Decide</option>
             <option>Aligns to the Consensus</option>
-            <option>Mostly</option>
-            <option>Always</option>
+            <option>Good</option>
+            <option>Excellent</option>
           </select>
         </div>
         <div className="form__group">
