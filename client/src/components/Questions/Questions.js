@@ -1,7 +1,14 @@
 import "./Questions.scss";
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
 function Questions({ submit }) {
-  console.log(submit);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
       <form className="form" onSubmit={submit}>
@@ -81,7 +88,23 @@ function Questions({ submit }) {
             defaultValue={""}
           />
         </div>
-        <button className="form__btn">Submit Feedback</button>
+        <Button variant="primary" onClick={handleShow} className="form__btn">
+          Submit Feedback
+        </Button>
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Feedback Sent!</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Thank you for your feedback!</Modal.Body>
+          <Modal.Footer>
+            <Link to="/">
+              <Button variant="primary" onClick={handleClose}>
+                Back to Main Page
+              </Button>
+            </Link>
+          </Modal.Footer>
+        </Modal>
       </form>
     </>
   );
