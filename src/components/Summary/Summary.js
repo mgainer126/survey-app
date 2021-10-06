@@ -20,7 +20,7 @@ function Summary() {
         matthew.gainer@pcbank.ca
       </p>
 
-      <Link to="questions">
+      <Link to="questions" className="summary__link">
         <button className="summary__btn">Continue</button>
       </Link>
     </div>
