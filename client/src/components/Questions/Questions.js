@@ -97,6 +97,7 @@ function Questions({ submit }) {
             <Modal.Title>Feedback Sent!</Modal.Title>
           </Modal.Header>
           <Modal.Body>Thank you for your feedback!</Modal.Body>
+
           <Modal.Footer>
             <Link to="/">
               <Button variant="primary" onClick={handleClose}>
