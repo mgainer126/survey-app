@@ -88,9 +88,9 @@ function Questions({ submit }) {
             defaultValue={""}
           />
         </div>
-        <Button variant="primary" onClick={handleShow} className="form__btn">
+        <button variant="primary" onClick={handleShow} className="form__btn">
           Submit Feedback
-        </Button>
+        </button>
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
