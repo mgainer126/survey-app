@@ -1,4 +1,4 @@
-const db = require("../db/dp");
+const db = require("../db/db");
 
 class SurveyDAO {
   async createSurvey(surveyId, comment, knowledge, prepared, priority, value) {

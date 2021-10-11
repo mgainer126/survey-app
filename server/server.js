@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const PORT = 8080;
 const cors = require("cors");
-// const updateSurvey = require("./routes/updateSurvey");
+const updateSurvey = require("./routes/updateSurvey");
 
 app.use(cors());
 
@@ -17,7 +17,7 @@ app.use((req, _res, next) => {
   next();
 });
 
-// app.use("/update", updateSurvey);
+app.use("/update", updateSurvey);
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);

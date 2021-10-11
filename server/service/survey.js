@@ -1,4 +1,4 @@
-const surveyDAO = require("../dao/vendor");
+const surveyDAO = require("../dao/survey");
 
 class SurveyService {
   createSurvey(surveyDTO) {
