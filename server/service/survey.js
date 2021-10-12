@@ -5,7 +5,7 @@ class SurveyService {
     const { surveyId, comment, knowledge, prepared, priority, value } =
       surveyDTO;
 
-    return surveyDAO.surveyVendor(
+    return surveyDAO.createSurvey(
       surveyId,
       comment,
       knowledge,

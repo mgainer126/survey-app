@@ -44,7 +44,7 @@ function Questions({ submit }) {
           <select multiple className="form__control" id="priority">
             <option>Never</option>
             <option>Lets Others Decide</option>
-            <option>Aligns to the Consensus</option>
+            <option>Aligns to Consensus</option>
             <option>Good</option>
             <option>Excellent</option>
           </select>

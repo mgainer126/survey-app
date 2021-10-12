@@ -8,6 +8,6 @@ const app = express();
 app.use(express.json());
 // const Vendor = require("../models/vendors");
 
-router.post("/vendor", VendorController.createVendor);
+router.post("/survey", VendorController.createVendor);
 
 module.exports = router;
