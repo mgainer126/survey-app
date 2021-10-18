@@ -1,10 +1,13 @@
 // import React from "react";
 import { React, Component } from "react";
 import Questions from "../../components/Questions/Questions";
-import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 
 export default class QuestionPage extends Component {
+  state = {
+    employee: "Select Employee For Survey",
+  };
+
   handleSubmit = (event) => {
     event.preventDefault();
     let feedback = [
@@ -37,7 +40,7 @@ export default class QuestionPage extends Component {
   render() {
     return (
       <>
-        <Questions submit={this.handleSubmit} />
+        <Questions submit={this.handleSubmit} employee={this.state.employee} />
       </>
     );
   }
