@@ -1,7 +1,7 @@
 const SurveyService = require("../service/survey");
 
 class SurveyController {
-  async createVendor(req, res) {
+  async createSurvey(req, res) {
     try {
       const id = await SurveyService.createSurvey(req.body);
       res.status(201).json(id);
