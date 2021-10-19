@@ -4,6 +4,7 @@ class SurveyDAO {
   async createSurvey(employee, comment, knowledge, prepared, priority, value) {
     const [id] = await db("survey").insert({
       employee: employee,
+      initiativeId: initiativeId,
       comment: comment,
       knowledge: knowledge,
       prepared: prepared,

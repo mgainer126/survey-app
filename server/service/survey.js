@@ -7,6 +7,7 @@ class SurveyService {
 
     return surveyDAO.createSurvey(
       employee,
+      initiativeId,
       comment,
       knowledge,
       prepared,

@@ -28,8 +28,20 @@ function Questions({ submit }) {
           </select>
         </div>
         <div className="form__group">
+          <label htmlFor="initiativeId" className="form__label">
+            2. Please provide inititave applicable for this performance
+            assessment.
+          </label>
+          <textarea
+            className="form__control-inititave"
+            id="initiativeId"
+            rows={1}
+            defaultValue={""}
+          />
+        </div>
+        <div className="form__group">
           <label htmlFor="value" className="form__label">
-            2. Does the product owner add value to the project?
+            3. Does the product owner add value to the project?
           </label>
           <select multiple className="form__control" id="value">
             <option>None</option>
@@ -41,7 +53,7 @@ function Questions({ submit }) {
         </div>
         <div className="form__group">
           <label htmlFor="prepared" className="form__label">
-            3. Does the product owner come prepared for meetings?
+            4. Does the product owner come prepared for meetings?
           </label>
           <select multiple className="form__control" id="prepared">
             <option>Never</option>
@@ -53,7 +65,7 @@ function Questions({ submit }) {
         </div>
         <div className="form__group">
           <label htmlFor="priority" className="form__label">
-            4. Does product owner provide guidance to the working team, to
+            5. Does product owner provide guidance to the working team, to
             ensure work is delivered based its relative priority?
           </label>
           <select multiple className="form__control" id="priority">
@@ -66,7 +78,7 @@ function Questions({ submit }) {
         </div>
         <div className="form__group">
           <label htmlFor="knowledge" className="form__label">
-            5. Does the product owner have an sufficent level of knowledge of
+            6. Does the product owner have an sufficent level of knowledge of
             the features to be implemented and the benifit to the business they
             provide?
           </label>
@@ -80,7 +92,7 @@ function Questions({ submit }) {
         </div>
         <div className="form__group">
           <label htmlFor="ownership" className="form__label">
-            6. Does the product owner take ownership of the features and tracks
+            7. Does the product owner take ownership of the features and tracks
             thier progress from the start through to implementation?
           </label>
           <select multiple className="form__control" id="ownership">
@@ -93,7 +105,7 @@ function Questions({ submit }) {
         </div>
         <div className="form__group-comment">
           <label htmlFor="comments" className="form__label-comment">
-            7. Please provide comments below to include what the product owner
+            8. Please provide comments below to include what the product owner
             does well, and what could be improved on.
           </label>
           <textarea

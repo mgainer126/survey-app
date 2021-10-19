@@ -16,6 +16,11 @@
   }
   &__control {
     width: 11rem;
+    &-inititave {
+      display: flex;
+      justify-content: space-around;
+      height: 1.5rem;
+    }
   }
   &__btn {
     margin-left: 6rem;
