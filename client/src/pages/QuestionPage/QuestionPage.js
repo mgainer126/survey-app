@@ -9,12 +9,13 @@ export default class QuestionPage extends Component {
     let feedback = [
       {
         employee: event.target[0].value,
-        value: event.target[1].value,
-        prepared: event.target[2].value,
-        priority: event.target[3].value,
-        knowledge: event.target[4].value,
-        ownership: event.target[5].value,
-        comment: event.target[6].value,
+        initiativeId: event.target[1].value,
+        value: event.target[2].value,
+        prepared: event.target[3].value,
+        priority: event.target[4].value,
+        knowledge: event.target[5].value,
+        ownership: event.target[6].value,
+        comment: event.target[7].value,
       },
     ];
     this.createSurveyResults(feedback[0]);
