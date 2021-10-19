@@ -9,6 +9,12 @@ function Questions({ submit }) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [name, setName] = useState("");
+
+  const toInputUppercase = (e) => {
+    e.target.value = ("" + e.target.value).toUpperCase();
+  };
+
   return (
     <>
       <form className="form" onSubmit={submit}>
@@ -36,6 +42,9 @@ function Questions({ submit }) {
             className="form__control-inititave"
             id="initiativeId"
             rows={1}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            onInput={toInputUppercase}
             defaultValue={""}
           />
         </div>
