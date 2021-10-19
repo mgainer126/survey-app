@@ -1,10 +1,10 @@
 const db = require("../db/db");
 
 class SurveyDAO {
-  async createSurvey(surveyId, comment, knowledge, prepared, priority, value) {
+  async createSurvey(employee, comment, knowledge, prepared, priority, value) {
     const [id] = await db("survey")
       .insert({
-        surveyId: surveyId,
+        employee: employee,
         comment: comment,
         knowledge: knowledge,
         prepared: prepared,
