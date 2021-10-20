@@ -19,6 +19,8 @@ app.use((req, _res, next) => {
 
 app.use("/update", routeSurvey);
 
+app.use("/request", routeSurvey);
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
   console.log("This is working");
