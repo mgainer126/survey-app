@@ -7,11 +7,9 @@ export default class StatsPage extends Component {
     axios
       .get("http://localhost:8080/request/survey")
       .then(function (response) {
-        // handle success
-        console.log(response);
+        console.log(response.data);
       })
       .catch(function (error) {
-        // handle error
         console.log(error);
       });
     return (
