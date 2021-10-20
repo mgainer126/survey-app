@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const SurveyController = require("../controller/createSurvey");
 const app = express();
+const database = require("../database");
 
 app.use(express.json());
 
@@ -19,8 +20,10 @@ router.post("/survey", SurveyController.createSurvey);
 //     .catch((err) => res.send("error getting survey data"));
 // });
 
-router.get("/survey", function (req, res) {
-  res.send("GET request to the homepage");
+router.get("/survey", async (req, res) => {
+  const results = await database.promise().query("SELECT * FROM survey");
+  console.log(results[0]);
+  res.status(200).send(results[0]);
 });
 
 module.exports = router;
