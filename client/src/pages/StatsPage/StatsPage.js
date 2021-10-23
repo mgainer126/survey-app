@@ -9,40 +9,45 @@ export default class StatsPage extends Component {
     results: null,
   };
 
-  componentDidMount() {
+  handleSubmit = (event) => {
+    event.preventDefault();
     axios
       .get("http://localhost:8080/request/survey")
       .then((response) => {
-        this.setState({ results: response.data });
-        console.log(response.data);
+        let allData = response.data;
+        let filteredData = allData.filter(
+          (employee) => employee.employee === event.target[0].value
+        );
+        this.setState({ results: filteredData });
       })
       .catch(function (error) {
         console.log(error);
       });
-  }
+  };
 
   render() {
-    console.log(this.state.results);
     return (
       <>
+        <StatsFilter filter={this.handleSubmit} />
         {this.state.results && this.state.results && (
-          <Table striped bordered hover>
-            <thead>
-              <StatsFilter />
-              <tr>
-                <th>Employee</th>
-                <th>Inititave ID</th>
-                <th>Prepardness</th>
-                <th>Priority</th>
-                <th>Knowledge</th>
-                <th>Ownership</th>
-                <th>Comment</th>
-              </tr>
-            </thead>
-            <tbody>
-              <Stats results={this.state.results} />
-            </tbody>
-          </Table>
+          <div>
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>Employee</th>
+                  <th>Inititave ID</th>
+                  <th>Prepardness</th>
+                  <th>Priority</th>
+                  <th>Knowledge</th>
+                  <th>Ownership</th>
+                  <th>Comment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <Stats results={this.state.results} />
+              </tbody>
+            </Table>
+          </div>
         )}
       </>
     );

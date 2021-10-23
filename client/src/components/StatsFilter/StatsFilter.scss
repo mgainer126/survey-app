@@ -1,0 +1,29 @@
+.form-floating {
+  display: flex;
+}
+
+.search {
+  &__btn {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 28px;
+    background-color: rgb(225, 37, 27);
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    line-height: 1.25rem;
+    font-size: 1rem;
+    padding: 0px 1.25rem;
+    text-align: center;
+    white-space: nowrap;
+    min-height: 48px;
+    min-width: 160px;
+    max-width: 280px;
+    z-index: 0;
+    margin: 1rem 0 1rem 0;
+  }
+}

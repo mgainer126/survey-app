@@ -25,8 +25,7 @@ export default class QuestionPage extends Component {
     axios
       .post("http://localhost:8080/update/survey", obj)
       .then((response) => {
-        console.log(response);
-        console.log("sucess");
+        console.log("sucess", response);
       })
       .catch((error) => {
         console.log(error);

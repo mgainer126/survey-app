@@ -1,6 +1,4 @@
 function Stats({ results }) {
-  console.log(results);
-
   return results.map((result) => {
     return (
       <tr>
