@@ -1,0 +1,9 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 5rem 3rem 3rem 3rem;
+  &__img {
+    width: 40rem;
+  }
+}
