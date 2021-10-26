@@ -1,5 +1,6 @@
 .form {
   margin-bottom: 5rem;
+  margin-top: 7rem;
   &__group {
     display: flex;
     justify-content: space-around;
@@ -20,6 +21,7 @@
       display: flex;
       justify-content: space-around;
       height: 1.5rem;
+      width: 11.2rem;
     }
   }
   &__btn {

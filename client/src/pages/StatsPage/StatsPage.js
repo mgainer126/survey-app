@@ -2,6 +2,7 @@ import { React, Component } from "react";
 import Table from "react-bootstrap/Table";
 import Stats from "../../components/Stats/Stats";
 import StatsFilter from "../../components/StatsFilter/StatsFilter";
+import "../StatsPage/StatsPage.scss";
 import axios from "axios";
 
 export default class StatsPage extends Component {
@@ -27,7 +28,7 @@ export default class StatsPage extends Component {
 
   render() {
     return (
-      <>
+      <div className="stats">
         <StatsFilter filter={this.handleSubmit} />
         {this.state.results && this.state.results && (
           <div>
@@ -49,7 +50,7 @@ export default class StatsPage extends Component {
             </Table>
           </div>
         )}
-      </>
+      </div>
     );
   }
 }

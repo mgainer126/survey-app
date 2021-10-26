@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import Main from "./pages/Main";
+import Main from "../src/pages/Main/Main";
 import QuestionPage from "./pages/QuestionPage/QuestionPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 

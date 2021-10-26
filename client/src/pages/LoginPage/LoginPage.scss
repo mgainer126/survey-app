@@ -1,8 +1,9 @@
 .login {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: center;
   align-content: center;
-  margin: 5rem 3rem 3rem 3rem;
+  margin: 7rem 3rem 3rem 3rem;
   &__img {
     width: 40rem;
   }
