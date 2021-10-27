@@ -6,7 +6,7 @@ function Main() {
   return (
     <div className="main">
       <Summary />
-      <img src={retro} alt="retro" />
+      <img src={retro} alt="retro" className="main__img" />
     </div>
   );
 }

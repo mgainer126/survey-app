@@ -15,6 +15,7 @@ function StatsFilter({ filter }) {
             <option>Select Employee Stats</option>
             <option value="Anas Al Shorbaji">Anas Al Shorbaji</option>
             <option value="Chang Duong">Chang Duong</option>
+            <option value="Khaled Elridi">Khaled Elridi</option>
             <option value="Mahjabeen Chowdhury">Mahjabeen Chowdhury</option>
             <option value="Mayukh Athmaram">Mayukh Athmaram</option>
             <option value="Navin Pedamalli">Navin Pedamalli</option>

@@ -10,7 +10,7 @@ function Header() {
           <img src={logo} alt="logo" className="header__logo"></img>
         </Link>
         <Link to="/login" className="header__manager">
-          <h5>Manager Log In</h5>
+          <h5>Manager Sign In</h5>
         </Link>
       </header>
     </>
