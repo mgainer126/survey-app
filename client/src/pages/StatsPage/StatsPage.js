@@ -1,6 +1,4 @@
 import { React, Component } from "react";
-import Table from "react-bootstrap/Table";
-import Stats from "../../components/Stats/Stats";
 import StatsFilter from "../../components/StatsFilter/StatsFilter";
 import "../StatsPage/StatsPage.scss";
 import axios from "axios";
@@ -33,9 +31,7 @@ export default class StatsPage extends Component {
         <StatsFilter filter={this.handleSubmit} />
         {this.state.results && this.state.results && (
           <div>
-            <Table striped bordered hover>
-              <StatsPageColl results={this.state.results} />
-            </Table>
+            <StatsPageColl results={this.state.results} />
           </div>
         )}
       </div>

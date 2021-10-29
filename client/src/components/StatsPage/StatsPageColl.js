@@ -11,7 +11,7 @@ function StatsPageColl({ results }) {
       <Table striped bordered hover>
         <StatsHeader />
         <Stats results={results} />
-        <Pdf targetRef={ref} filename="post.pdf">
+        <Pdf targetRef={ref} filename="employeeResults.pdf">
           {({ toPdf }) => <button onClick={toPdf}>Capture as PDF</button>}
         </Pdf>
       </Table>
