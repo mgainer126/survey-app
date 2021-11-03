@@ -1,8 +1,9 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-
+import useToken from "../../components/App/useToken";
+import StatsPage from "../../pages/StatsPage/StatsPage";
 import "./Login.scss";
 
 async function loginUser(credentials) {
@@ -15,10 +16,14 @@ async function loginUser(credentials) {
   }).then((data) => data.json());
 }
 
-export default function Login({ setToken }) {
+export default function Login() {
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
+  const { token, setToken } = useToken();
 
+  if (token) {
+    return <StatsPage />;
+  }
   //Caputues the username and password entered on the form
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,6 +33,7 @@ export default function Login({ setToken }) {
       username,
       password,
     });
+    console.log(token);
     setToken(token); //Not sure what this does, but believe it relates to line 55
   };
 
