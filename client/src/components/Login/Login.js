@@ -17,7 +17,7 @@ async function loginUser(credentials) {
 }
 
 export default function Login() {
-  const [username, setUserName] = useState();
+  const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const { token, setToken } = useToken();
 
@@ -30,7 +30,7 @@ export default function Login() {
     console.log(e);
     const token = await loginUser({
       //wait for the info, then call the loginUser api call in cline 7
-      username,
+      email,
       password,
     });
     console.log(token);
@@ -39,11 +39,11 @@ export default function Login() {
 
   return (
     <div className="login-wrapper">
-      <h1>Please Log In</h1>
+      <h1>Manager Log In</h1>
       <form onSubmit={handleSubmit}>
         <label>
-          <p>Username</p>
-          <input type="text" onChange={(e) => setUserName(e.target.value)} />
+          <p>Email</p>
+          <input type="email" onChange={(e) => setEmail(e.target.value)} />
           {/* This setUserName entered here will set the userName, that is then created as a token object in line 24   */}
         </label>
         <label>
