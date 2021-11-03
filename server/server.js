@@ -21,6 +21,12 @@ app.use("/update", routeSurvey);
 
 app.use("/request", routeSurvey);
 
+app.use("/login", (req, res) => {
+  res.send({
+    token: "test123",
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
   console.log("This is working");

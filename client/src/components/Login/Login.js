@@ -1,46 +1,62 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-function Login() {
+import PropTypes from "prop-types";
+import React, { useState } from "react";
+
+import "./Login.scss";
+
+async function loginUser(credentials) {
+  return fetch("http://localhost:8080/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(credentials),
+  }).then((data) => data.json());
+}
+
+export default function Login({ setToken }) {
+  const [username, setUserName] = useState();
+  const [password, setPassword] = useState();
+
+  //Caputues the username and password entered on the form
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(e);
+    const token = await loginUser({
+      //wait for the info, then call the loginUser api call in cline 7
+      username,
+      password,
+    });
+    setToken(token); //Not sure what this does, but believe it relates to line 55
+  };
+
   return (
-    <div className="col-md-10 mx-auto col-lg-5">
-      <form className="p-4 p-md-5 border rounded-3 bg-light">
-        <h3>Manager Sign In</h3>
-        <div className="form-floating mb-3">
-          <input
-            type="email"
-            className="form-control"
-            id="floatingInput"
-            placeholder="name@example.com"
-          />
-          <label htmlFor="floatingInput">Email address</label>
-        </div>
-        <div className="form-floating mb-3">
+    <div className="login-wrapper">
+      <h1>Please Log In</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          <p>Username</p>
+          <input type="text" onChange={(e) => setUserName(e.target.value)} />
+          {/* This setUserName entered here will set the userName, that is then created as a token object in line 24   */}
+        </label>
+        <label>
+          <p>Password</p>
           <input
             type="password"
-            className="form-control"
-            id="floatingPassword"
-            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+            //this setPassword entered here will set the password, that is then created as part of the token object in line 24
           />
-          <label htmlFor="floatingPassword">Password</label>
+        </label>
+        <div>
+          <button type="submit">Submit</button>
         </div>
-        <div className="checkbox mb-3">
-          <label>
-            <input type="checkbox" defaultValue="remember-me" /> Remember me
-          </label>
-        </div>
-
-        <hr className="my-4" />
-        <small className="text-muted">New to Employee Survey?</small>
-        <br />
-        <small className="text-muted">
-          Send a Access Request to matthew.gainer@pcbank.ca
-        </small>
       </form>
-      <Link to="/stats">
-        <button className="w-100 btn btn-lg btn-primary">Log In</button>
-      </Link>
     </div>
   );
 }
 
-export default Login;
+//What does this do?
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired,
+};
