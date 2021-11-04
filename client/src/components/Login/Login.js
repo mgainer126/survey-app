@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import PropTypes from "prop-types";
 import React, { useState } from "react";
@@ -28,13 +28,14 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(e);
+    //Do api call do the data base with the email address and password provided, if the return is sucesfull than to and set the token in the next step
     const token = await loginUser({
-      //wait for the info, then call the loginUser api call in cline 7
+      //wait for the info, then call the loginUser api call in line 7
       email,
       password,
     });
     console.log(token);
-    setToken(token); //Not sure what this does, but believe it relates to line 55
+    setToken(token); //this sets the token from the API call and puts it into session storage
   };
 
   return (

@@ -6,7 +6,7 @@ import QuestionPage from "./pages/QuestionPage/QuestionPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 
 import "./App.css";
-import StatsPage from "./pages/StatsPage/StatsPage";
+// import StatsPage from "./pages/StatsPage/StatsPage";
 
 function App() {
   return (

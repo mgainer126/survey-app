@@ -6,8 +6,6 @@ const database = require("../database");
 
 app.use(express.json());
 
-// router.post("/survey", SurveyController.createSurvey);
-
 router.post("/survey", (req, res) => {
   const {
     employee,
@@ -48,4 +46,9 @@ router.get("/survey", async (req, res) => {
   res.status(200).send(results[0]);
 });
 
+router.get("/credentials", async (req, res) => {
+  const results = await database.promise().query("SELECT * FROM credentials");
+  console.log(results[0]);
+  res.status(200).send(results[0]);
+});
 module.exports = router;

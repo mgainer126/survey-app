@@ -27,6 +27,8 @@ app.use("/login", (req, res) => {
   });
 });
 
+app.use("/validate", routeSurvey);
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
   console.log("This is working");
