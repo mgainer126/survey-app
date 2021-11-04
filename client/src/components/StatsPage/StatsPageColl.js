@@ -17,14 +17,14 @@ function StatsPageColl({ results }) {
       <Table striped bordered hover>
         <StatsHeader />
         <Stats results={results} />
-        <Pdf targetRef={ref} filename="employeeResults.pdf" options={options}>
-          {({ toPdf }) => (
-            <button className="stats__pdfbtn" onClick={toPdf}>
-              Create PDF
-            </button>
-          )}
-        </Pdf>
       </Table>
+      <Pdf targetRef={ref} filename="employeeResults.pdf" options={options}>
+        {({ toPdf }) => (
+          <button className="stats__pdfbtn" onClick={toPdf}>
+            Create PDF
+          </button>
+        )}
+      </Pdf>
     </div>
   );
 }
