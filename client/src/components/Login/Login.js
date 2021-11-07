@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import React, { useState } from "react";
 import useToken from "../../components/App/useToken";
 import StatsPage from "../../pages/StatsPage/StatsPage";
+import axios from "axios";
 import "./Login.scss";
 
 async function loginUser(credentials) {
@@ -16,7 +17,7 @@ async function loginUser(credentials) {
   }).then((data) => data.json());
 }
 
-export default function Login() {
+function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const { token, setToken } = useToken();
@@ -24,18 +25,32 @@ export default function Login() {
   if (token) {
     return <StatsPage />;
   }
+
   //Caputues the username and password entered on the form
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e);
+    axios
+      .get("http://localhost:8080/validate/credentials")
+      .then(function (response) {
+        let credentialArr = response.data;
+        const locateCred = credentialArr.filter(
+          (credential) => email === credential.email
+        );
+        console.log(locateCred[0].password === password);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+
     //Do api call do the data base with the email address and password provided, if the return is sucesfull than to and set the token in the next step
-    const token = await loginUser({
-      //wait for the info, then call the loginUser api call in line 7
-      email,
-      password,
-    });
-    console.log(token);
-    setToken(token); //this sets the token from the API call and puts it into session storage
+    // const token = await loginUser({
+    //   //wait for the info, then call the loginUser api call in line 7
+    //   email,
+    //   password,
+    // });
+    // console.log(token);
+    // setToken(token); //this sets the token from the API call and puts it into session storage
   };
 
   return (
@@ -75,6 +90,8 @@ export default function Login() {
     </div>
   );
 }
+
+export default Login;
 
 //What does this do?
 Login.propTypes = {

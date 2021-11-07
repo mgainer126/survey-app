@@ -51,4 +51,5 @@ router.get("/credentials", async (req, res) => {
   console.log(results[0]);
   res.status(200).send(results[0]);
 });
+
 module.exports = router;
