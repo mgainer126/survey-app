@@ -7,16 +7,6 @@ import StatsPage from "../../pages/StatsPage/StatsPage";
 import axios from "axios";
 import "./Login.scss";
 
-async function loginUser(credentials) {
-  return fetch("http://localhost:8080/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(credentials),
-  }).then((data) => data.json());
-}
-
 function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -36,21 +26,24 @@ function Login() {
         const locateCred = credentialArr.filter(
           (credential) => email === credential.email
         );
-        console.log(locateCred[0].password === password);
+        const verify = locateCred[0].password === password;
+        console.log(verify);
+        return verify;
       })
-      .catch(function (error) {
-        // handle error
+      .then((res) => {
+        console.log(res);
+        if (res === true) {
+          axios.get("http://localhost:8080/login").then((res) => {
+            console.log(res.data);
+            let token = res.data;
+            setToken(token);
+          });
+        }
+      })
+
+      .catch((error) => {
         console.log(error);
       });
-
-    //Do api call do the data base with the email address and password provided, if the return is sucesfull than to and set the token in the next step
-    // const token = await loginUser({
-    //   //wait for the info, then call the loginUser api call in line 7
-    //   email,
-    //   password,
-    // });
-    // console.log(token);
-    // setToken(token); //this sets the token from the API call and puts it into session storage
   };
 
   return (
