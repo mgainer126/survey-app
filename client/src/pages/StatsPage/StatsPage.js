@@ -1,15 +1,16 @@
-import { React, Component } from "react";
+import { React, Component, useState } from "react";
 import StatsFilter from "../../components/StatsFilter/StatsFilter";
 import "../StatsPage/StatsPage.scss";
 import axios from "axios";
 import StatsPageColl from "../../components/StatsPage/StatsPageColl";
+import useToken from "../../components/App/useToken";
+import { Link } from "react-router-dom";
 
-export default class StatsPage extends Component {
-  state = {
-    results: null,
-  };
+function StatsPage() {
+  const [results, setResults] = useState();
+  const { token } = useToken();
 
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     axios
       .get("http://localhost:8080/request/survey")
@@ -18,23 +19,34 @@ export default class StatsPage extends Component {
         let filteredData = allData.filter(
           (employee) => employee.employee === event.target[0].value
         );
-        this.setState({ results: filteredData });
+        setResults(filteredData);
       })
       .catch(function (error) {
         console.log(error);
       });
   };
 
-  render() {
-    return (
-      <div className="stats">
-        <StatsFilter filter={this.handleSubmit} />
-        {this.state.results && this.state.results && (
-          <div>
-            <StatsPageColl results={this.state.results} />
-          </div>
-        )}
-      </div>
-    );
-  }
+  return (
+    <div className="stats">
+      {token && (
+        <>
+          <StatsFilter filter={handleSubmit} />
+          {results && (
+            <div>
+              <StatsPageColl results={results} />
+            </div>
+          )}
+        </>
+      )}
+      {!token && (
+        <>
+          <Link to="/login">
+            <h3>Please Log In</h3>
+          </Link>
+        </>
+      )}
+    </div>
+  );
 }
+
+export default StatsPage;

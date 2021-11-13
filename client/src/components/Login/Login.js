@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import React, { useState } from "react";
 import useToken from "../../components/App/useToken";
-import StatsPage from "../../pages/StatsPage/StatsPage";
 import axios from "axios";
 import "./Login.scss";
 
@@ -10,10 +9,6 @@ function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const { token, setToken } = useToken();
-
-  // if (token) {
-  //   return <StatsPage />;
-  // }
 
   //Caputues the username and password entered on the form
   const handleSubmit = async (e) => {
@@ -48,7 +43,7 @@ function Login() {
     <div className="login-wrapper">
       {token && (
         <>
-          <h1>You Are Already Logged In</h1>
+          <h1>Sucessfull Login</h1>
           <Link to="/stats">
             <h3>Click Here to Go to Stats Page</h3>
           </Link>
