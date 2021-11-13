@@ -1,4 +1,4 @@
-import { React, Component, useState } from "react";
+import { React, useState } from "react";
 import StatsFilter from "../../components/StatsFilter/StatsFilter";
 import "../StatsPage/StatsPage.scss";
 import axios from "axios";

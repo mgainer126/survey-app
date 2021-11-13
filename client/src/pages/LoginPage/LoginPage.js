@@ -1,7 +1,6 @@
 import Login from "../../components/Login/Login";
 import "./LoginPage.scss";
 import collaboration from "../../assets/collaboration-1.jpg";
-// import useToken from "../../components/App/useToken";
 
 function LoginPage() {
   return (
