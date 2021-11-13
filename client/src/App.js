@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Main from "../src/pages/Main/Main";
 import QuestionPage from "./pages/QuestionPage/QuestionPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import StatsPage from "./pages/StatsPage/StatsPage";
 
 import "./App.css";
 // import StatsPage from "./pages/StatsPage/StatsPage";
@@ -16,7 +17,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/questions" component={QuestionPage} />
-          {/* <Route exact path="/stats" component={StatsPage} /> */}
+          <Route exact path="/stats" component={StatsPage} />
           <Route exact path="/login" component={LoginPage} />
         </Switch>
       </BrowserRouter>
