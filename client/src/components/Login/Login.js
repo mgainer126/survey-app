@@ -18,7 +18,7 @@ function MyVerticallyCenteredModal(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Manager Log In Sucesful
+            Manager Log In Sucesfull
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -84,15 +84,15 @@ function Login() {
           axios.get("http://localhost:8080/login").then((res) => {
             let token = res.data;
             setToken(token);
-            console.log(token);
+            console.log("Sucesfull Username and Password");
           });
         }
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error, "Incorrect Username or Password Entered");
       });
   };
-  console.log(token);
+
   return (
     <div className="login-wrapper">
       <>

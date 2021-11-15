@@ -4,7 +4,6 @@ import "../StatsPage/StatsPage.scss";
 import axios from "axios";
 import StatsPageColl from "../../components/StatsPage/StatsPageColl";
 import useToken from "../../components/App/useToken";
-import { Link } from "react-router-dom";
 
 function StatsPage() {
   const [results, setResults] = useState();
