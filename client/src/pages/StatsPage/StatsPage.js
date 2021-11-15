@@ -40,9 +40,7 @@ function StatsPage() {
       )}
       {!token && (
         <>
-          <Link to="/login">
-            <h3>Please Log In</h3>
-          </Link>
+          <h3>To view employee stats, requires a Manager Log In</h3>
         </>
       )}
     </div>
