@@ -8,6 +8,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
 function MyVerticallyCenteredModal(props) {
+  console.log(props);
   return (
     <>
       <Modal
@@ -18,7 +19,7 @@ function MyVerticallyCenteredModal(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Manager Log In Sucesfull
+            Manager Log In Sucesfull or Already Loggin In
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -125,6 +126,7 @@ function Login() {
               variant="primary"
               type="submit"
               onClick={() => setModalShow(true)}
+              className="login__button"
             >
               Submit
             </Button>

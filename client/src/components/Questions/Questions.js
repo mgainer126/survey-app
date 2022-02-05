@@ -23,14 +23,14 @@ function Questions({ submit }) {
             1. Please select the product owner that this survey applies towards.
           </label>
           <select multiple className="form__control" id="value">
-            <option>Anas Al Shorbaji </option>
-            <option>Chang Duong</option>
-            <option>Khaled Elridi</option>
-            <option>Mahjabeen Chowdhury</option>
-            <option>Mayukh Athmaram</option>
-            <option>Navin Pedamalli</option>
-            <option>Sheen Sharma</option>
-            <option>Shokoofe Tabatabaei</option>
+            <option>Rob Smith </option>
+            <option>Grace Young</option>
+            <option>Weston Michael</option>
+            <option>Mila Kilo</option>
+            <option>Tom Cruise</option>
+            <option>Connor Wilson</option>
+            <option>Michael Harris</option>
+            <option>Jennifer Harrison</option>
           </select>
         </div>
         <div className="form__group">

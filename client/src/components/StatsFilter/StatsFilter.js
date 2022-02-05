@@ -13,14 +13,14 @@ function StatsFilter({ filter }) {
             id="value"
           >
             <option>Select Employee Stats</option>
-            <option value="Anas Al Shorbaji">Anas Al Shorbaji</option>
-            <option value="Chang Duong">Chang Duong</option>
-            <option value="Khaled Elridi">Khaled Elridi</option>
-            <option value="Mahjabeen Chowdhury">Mahjabeen Chowdhury</option>
-            <option value="Mayukh Athmaram">Mayukh Athmaram</option>
-            <option value="Navin Pedamalli">Navin Pedamalli</option>
-            <option value="Sheen Sharma">Sheen Sharma</option>
-            <option value="Shokoofe Tabatabaei">Shokoofe Tabatabaei</option>
+            <option value="Rob Smith">Rob Smith</option>
+            <option value="Grace Young">Grace Young</option>
+            <option value="Weston Micheal">Weston Michael</option>
+            <option value="Mila Kila">Mila Kilo</option>
+            <option value="Tom Cruise">Tom Cruise</option>
+            <option value="Connor Wilson">Connor Wilson</option>
+            <option value="Micheal Harris">Michael Harris</option>
+            <option value="Jennifer Harrison">Jennifer Harrison</option>
           </Form.Select>
           <button variant="primary" className="search__btn">
             Search
