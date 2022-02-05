@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/pclogo.svg";
+import logo from "../../assets/genericlogo.png";
 import "../Header/Header.scss";
 import useToken from "../../components/App/useToken";
 
