@@ -1,7 +1,5 @@
 Welcome to the Employee Performance Survey site.
 
-Here you will find a little about me, and my experience.
-
 As a product owner, as part of one of the Agile ceremonies is the Retrospective. This survey was designed to be sent to colleagues who work with the product owner, to 
 solicit feedback on the product owner's performance. 
 
